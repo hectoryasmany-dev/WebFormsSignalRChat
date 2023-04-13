@@ -36,18 +36,18 @@ namespace WebFormsSignalRChat.Module.BusinessObjects
         }
         string senderName;
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string SenderName
+        public string Title
         {
             get => senderName;
-            set => SetPropertyValue(nameof(SenderName), ref senderName, value);
+            set => SetPropertyValue(nameof(Title), ref senderName, value);
         }
-        string message;
-        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string Message
-        {
-            get => message;
-            set => SetPropertyValue(nameof(Message), ref message, value);
-        }
+        //string message;
+        //[Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        //public string Message
+        //{
+        //    get => message;
+        //    set => SetPropertyValue(nameof(Message), ref message, value);
+        //}
 
     }
 }

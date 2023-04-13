@@ -1,9 +1,31 @@
-﻿<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
   <Options CollectionsEditMode="Edit" />
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.3.0" IsNewNode="True" />
+  </SchemaModules>
   <ViewItems>
     <PropertyEditor Name="PropertyEditors">
       <RegisteredPropertyEditor PropertyType="System.Drawing.Color" EditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxColorPickerPropertyEditor" />
     </PropertyEditor>
   </ViewItems>
+  <Views>
+    <DetailView Id="ChatContainer_DetailView">
+      <Items>
+        <IFrameViewItem Id="Chat" Caption="Broadcast Chat" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ChatContainer" RelativeSize="100">
+              <LayoutItem Id="SenderName" RelativeSize="4.8714479025710418" />
+              <LayoutItem Id="Message" RelativeSize="3.5182679296346415" />
+              <LayoutItem Id="Chat" ViewItem="Chat" Index="2" RelativeSize="91.610284167794319" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
 </Application>

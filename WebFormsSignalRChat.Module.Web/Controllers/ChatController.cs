@@ -22,7 +22,7 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
 
         private void SendMessage_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            
+            ((WebWindow)this.Frame).RegisterStartupScript("Send", "sendMessage('hector','test message')");
             //var currentObj = e.CurrentObject as ChatContainer;
             //var hub = new ChatHub();
             //hub.Send(currentObj.SenderName, currentObj.Message);
@@ -30,10 +30,10 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "/Scripts/jquery-1.6.4.min.js");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "/Scripts/jquery.signalR-2.4.3.min.js");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "signalr/hubs");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "/Scripts/Chat.js");
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "../Scripts/jquery-1.6.4.min.js");
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "../Scripts/jquery.signalR-2.4.3.min.js");
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "../signalr/hubs");
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "../Scripts/Chat.js");
             WebWindow.CurrentRequestWindow.RegisterClientScript("Test2", "sendMessage('hector','test message');");
 
 
