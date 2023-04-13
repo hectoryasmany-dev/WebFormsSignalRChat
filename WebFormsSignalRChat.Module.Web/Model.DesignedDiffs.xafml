@@ -18,10 +18,8 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="ChatContainer" RelativeSize="100">
-              <LayoutItem Id="SenderName" RelativeSize="4.8714479025710418" />
-              <LayoutItem Id="Message" RelativeSize="3.5182679296346415" />
-              <LayoutItem Id="Chat" ViewItem="Chat" Index="2" RelativeSize="91.610284167794319" IsNewNode="True" />
+            <LayoutGroup Id="ChatContainer" RelativeSize="100" Caption="ChatContainer">
+              <LayoutItem Id="Title" RelativeSize="100" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
