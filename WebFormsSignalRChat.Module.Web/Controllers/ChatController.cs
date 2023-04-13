@@ -27,6 +27,18 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
             //var hub = new ChatHub();
             //hub.Send(currentObj.SenderName, currentObj.Message);
         }
-       
+        protected override void OnViewControlsCreated()
+        {
+            base.OnViewControlsCreated();
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "/Scripts/jquery-1.6.4.min.js");
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "/Scripts/jquery.signalR-2.4.3.min.js");
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "signalr/hubs");
+            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("Test", "/Scripts/Chat.js");
+            WebWindow.CurrentRequestWindow.RegisterClientScript("Test2", "sendMessage('hector','test message');");
+
+
+
+        }
+
     }
 }

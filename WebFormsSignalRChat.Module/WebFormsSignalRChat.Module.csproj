@@ -114,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\ChatContainer.cs" />
-    <Compile Include="Chat\ChatHub.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
