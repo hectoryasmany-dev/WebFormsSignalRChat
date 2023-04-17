@@ -12,9 +12,6 @@
   </ViewItems>
   <Views>
     <DetailView Id="ChatContainer_DetailView">
-      <Items>
-        <IFrameViewItem Id="Chat" Caption="Broadcast Chat" IsNewNode="True" />
-      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">

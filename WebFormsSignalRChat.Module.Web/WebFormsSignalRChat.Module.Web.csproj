@@ -121,7 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ChatController.cs" />
-    <Compile Include="Controllers\RegisterJavaScriptsFilesController.cs" />
+    <Compile Include="Controllers\RegisterJavaScriptsFilesController.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\SignalRCHat.cs" />
     <Compile Include="WebModule.cs">
       <SubType>Component</SubType>

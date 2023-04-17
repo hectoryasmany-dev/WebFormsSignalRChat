@@ -22,24 +22,24 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
             var currentObj = e.CurrentObject as ChatContainer;
             var title = currentObj.Title;
             var message = currentObj.Message;
-            //WebWindow.CurrentRequestWindow.RegisterClientScript("SendBroadcastAlert", $"sendMessage('{title}','{message}');");
-            MessageOptions ms = new MessageOptions();
-            ms.Duration = 3000;
-            ms.Message = message;
-            ms.Type = InformationType.Warning;
-            Application.ShowViewStrategy.ShowMessage(ms);
+            WebWindow.CurrentRequestWindow.RegisterClientScript("SendBroadcastAlert", $"sendMessage('{title}','{message}');");
+            //MessageOptions ms = new MessageOptions();
+            //ms.Duration = 3000;
+            //ms.Message = message;
+            //ms.Type = InformationType.Warning;
+            //Application.ShowViewStrategy.ShowMessage(ms);
             //((WebWindow)this.Frame).RegisterStartupScript("ExecuteScriptFromAction", $"RaiseXafCallback(globalCallbackControl, 'MyScript', '{message}', '', false);");
 
         }
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
-            XafCallbackManager.RegisterHandler("MyScript", this);
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("jquery", "http://localhost:2064/Scripts/jquery-1.6.4.min.js");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("signalr", "http://localhost:2064/Scripts/jquery.signalR-2.4.3.min.js");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("hub", "http://localhost:2064/signalr/hubs");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("messenger", "http://localhost:2064/Scripts/Chat.js");
-            WebWindow.CurrentRequestWindow.RegisterClientScript("StartListening", $"sendMessage('','');");
+            //XafCallbackManager.RegisterHandler("MyScript", this);
+            ////WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("jquery", "http://localhost:2064/Scripts/jquery-1.6.4.min.js");
+            //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("signalr", "http://localhost:2064/Scripts/jquery.signalR-2.4.3.min.js");
+            //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("hub", "http://localhost:2064/signalr/hubs");
+            //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("messenger", "http://localhost:2064/Scripts/Chat.js");
+            //WebWindow.CurrentRequestWindow.RegisterClientScript("StartListening", $"sendMessage('','');");
 
         }
 
