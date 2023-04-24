@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33530.505
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsSignalRChat.Module", "WebFormsSignalRChat.Module\WebFormsSignalRChat.Module.csproj", "{EABA88C9-56A5-4002-8597-744EF8740864}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsSignalRChat.Module.Web", "WebFormsSignalRChat.Module.Web\WebFormsSignalRChat.Module.Web.csproj", "{B8E54C6C-99F9-449F-AA9B-B8AA09975F55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsSignalRChat.Web", "WebFormsSignalRChat.Web\WebFormsSignalRChat.Web.csproj", "{8A2D527C-7884-4749-882E-34D858D7C6C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatHubContainer", "ChatHubContainer\ChatHubContainer.csproj", "{FE1C4E62-7F04-460C-924A-5E22A717E4D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,12 @@ Global
 		{8A2D527C-7884-4749-882E-34D858D7C6C1}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{8A2D527C-7884-4749-882E-34D858D7C6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A2D527C-7884-4749-882E-34D858D7C6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
