@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsSignalRChat.Web", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatHubContainer", "ChatHubContainer\ChatHubContainer.csproj", "{FE1C4E62-7F04-460C-924A-5E22A717E4D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServerHub", "ChatServerHub\ChatServerHub.csproj", "{4D6EC40D-7349-439A-B3E5-62F68375A2BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,12 @@ Global
 		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
 		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE1C4E62-7F04-460C-924A-5E22A717E4D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D6EC40D-7349-439A-B3E5-62F68375A2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6EC40D-7349-439A-B3E5-62F68375A2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6EC40D-7349-439A-B3E5-62F68375A2BC}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6EC40D-7349-439A-B3E5-62F68375A2BC}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{4D6EC40D-7349-439A-B3E5-62F68375A2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6EC40D-7349-439A-B3E5-62F68375A2BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

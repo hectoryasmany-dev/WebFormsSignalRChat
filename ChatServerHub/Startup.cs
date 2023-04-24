@@ -5,8 +5,8 @@ using System.Web;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(ChatHubContainer.Startup))]
-namespace ChatHubContainer
+[assembly: OwinStartup(typeof(ChatServerHub.Startup))]
+namespace ChatServerHub
 {
 
     public class Startup

@@ -25,9 +25,9 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
                 //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("signalr", "http://localhost:2064/Scripts/jquery.signalR-2.4.3.min.js");
                 //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("hub", "http://localhost:2064/signalr/hubs");
                 //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("messenger", "http://localhost:2064/Scripts/Chat.js");
-                window.RegisterClientScriptInclude("signalr", "http://localhost:2064/Scripts/jquery.signalR-2.4.3.min.js");
-                window.RegisterClientScriptInclude("hub", "http://localhost:50511/signalr/hubs");
-                window.RegisterClientScriptInclude("messenger", "http://localhost:50511/Scripts/Chat.js");
+                //window.RegisterClientScriptInclude("signalr", "http://localhost:2064/Scripts/jquery.signalR-2.4.3.min.js");
+                //window.RegisterClientScriptInclude("hub", "https://earlygoldpencil38.conveyor.cloud/signalr/hubs");
+                //window.RegisterClientScriptInclude("messenger", "http://localhost:2064/Scripts/Chat.js");
             }
 
         }
