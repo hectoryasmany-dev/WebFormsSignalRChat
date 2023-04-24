@@ -26,7 +26,7 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
             var currentObj = e.CurrentObject as ChatContainer;
             var title = currentObj.Title;
             var message = currentObj.Message;
-            connection = new HubConnection("http://localhost:8080/");
+            connection = new HubConnection("http://207.244.253.16:8080/");
             //Make proxy to hub based on hub name on server
             myHub = connection.CreateHubProxy("MyHub");
             //Start connection            
@@ -56,7 +56,12 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
 
                    myHub.On<string>("addMessage", param =>
                    {
-                       ((WebWindow)this.Frame).RegisterStartupScript("Broadcast", $"alert('{param}')");
+                       //MessageOptions ms = new MessageOptions();
+                       //ms.Duration = 3000;
+                       //ms.Message = message;
+                       //ms.Type = InformationType.Warning;
+                       //Application.ShowViewStrategy.ShowMessage(param);
+                       //((WebWindow)this.Frame).RegisterStartupScript("Broadcast", $"alert('{param}')");
                        Debug.WriteLine(param);
                    });
                }
