@@ -10,6 +10,7 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
 {
     public class RegisterJavaScriptsFilesController : ViewController
     {
+        //needs change this to window controller
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
