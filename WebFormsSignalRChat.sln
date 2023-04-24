@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsSignalRChat.Module.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsSignalRChat.Web", "WebFormsSignalRChat.Web\WebFormsSignalRChat.Web.csproj", "{8A2D527C-7884-4749-882E-34D858D7C6C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChatHubContainer", "SignalRChatHubContainer\SignalRChatHubContainer.csproj", "{A338556A-729F-4C26-A651-7789BB25C8B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,12 @@ Global
 		{8A2D527C-7884-4749-882E-34D858D7C6C1}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{8A2D527C-7884-4749-882E-34D858D7C6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A2D527C-7884-4749-882E-34D858D7C6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A338556A-729F-4C26-A651-7789BB25C8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A338556A-729F-4C26-A651-7789BB25C8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A338556A-729F-4C26-A651-7789BB25C8B4}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{A338556A-729F-4C26-A651-7789BB25C8B4}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{A338556A-729F-4C26-A651-7789BB25C8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A338556A-729F-4C26-A651-7789BB25C8B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

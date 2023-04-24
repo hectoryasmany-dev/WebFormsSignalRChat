@@ -8,19 +8,40 @@ using System.Threading.Tasks;
 
 namespace WebFormsSignalRChat.Module.Web.Controllers
 {
-    public class RegisterJavaScriptsFilesController : ViewController
+    public class RegisterJavaScriptsFilesController : WindowController
     {
-        //needs change this to window controller
-        protected override void OnViewControlsCreated()
+        public RegisterJavaScriptsFilesController()
         {
-            base.OnViewControlsCreated();
-            //its messing with dx javascripts
-            //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("jquery", "http://localhost:2064/Scripts/jquery-1.6.4.min.js");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("signalr", "http://localhost:2064/Scripts/jquery.signalR-2.4.3.min.js");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("hub", "http://localhost:2064/signalr/hubs");
-            WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("messenger", "http://localhost:2064/Scripts/Chat.js");
-            //WebWindow.CurrentRequestWindow.RegisterClientScript("StartListening", $"sendMessage('','');");
+            TargetWindowType = WindowType.Main;
+        }
+        protected override void OnWindowControllersActivated()
+        {
+            base.OnWindowControllersActivated();
+            var window = (WebWindow)Frame;
+            if (window != null)
+            {
+                window.RegisterClientScriptInclude("signalr", "https://localhost:7206/js/signalr/dist/browser/signalr.js");
+                window.RegisterClientScriptInclude("messenger", "https://localhost:7206/js/chat.js");
+            }
 
+        }
+
+        //needs change this to window controller
+        //protected override void OnViewControlsCreated()
+        //{
+        //    base.OnViewControlsCreated();
+        //    //its messing with dx javascripts
+        //    //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("jquery", "http://localhost:2064/Scripts/jquery-1.6.4.min.js");
+        //    WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("signalr", "https://localhost:7206/js/signalr/dist/browser/signalr.js");
+        //    //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("hub", "https://localhost:7206/signalr/hubs");
+        //    WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("messenger", "https://localhost:7206/js/chat.js");
+        //    //WebWindow.CurrentRequestWindow.RegisterClientScript("StartListening", $"sendMessage('','');");
+
+        //}
+        protected override void OnActivated()
+        {
+            base.OnActivated();
+           
         }
     }
 }
