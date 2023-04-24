@@ -62,7 +62,7 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
                        //ms.Type = InformationType.Warning;
                        //Application.ShowViewStrategy.ShowMessage(param);
                        //((WebWindow)this.Frame).RegisterStartupScript("Broadcast", $"alert('{param}')");
-                       Debug.WriteLine(param);
+                       //Debug.WriteLine(param);
                    });
                }
 
