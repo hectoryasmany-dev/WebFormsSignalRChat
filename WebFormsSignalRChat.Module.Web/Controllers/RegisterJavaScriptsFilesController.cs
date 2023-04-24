@@ -20,6 +20,8 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
             var window = (WebWindow)Frame;
             if (window != null)
             {
+                //window.RegisterClientScriptInclude("signalr", "https://localhost:7206/js/signalr/dist/browser/signalr.js");
+                //window.RegisterClientScriptInclude("messenger", "https://localhost:7206/js/chat.js");
                 window.RegisterClientScriptInclude("signalr", "https://localhost:7206/js/signalr/dist/browser/signalr.js");
                 window.RegisterClientScriptInclude("messenger", "https://localhost:7206/js/chat.js");
             }
