@@ -4,6 +4,7 @@ using DevExpress.ExpressApp.Web;
 using DevExpress.ExpressApp.Web.Templates;
 using Microsoft.AspNet.SignalR.Client;
 using System;
+using System.Diagnostics;
 using WebFormsSignalRChat.Module.BusinessObjects;
 namespace WebFormsSignalRChat.Module.Web.Controllers
 {
@@ -20,44 +21,48 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
 
         }
 
-        private  void SendMessage_Execute(object sender, SimpleActionExecuteEventArgs e)
+        private void SendMessage_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            connection = new HubConnection("http://localhost:52838/");
+            var currentObj = e.CurrentObject as ChatContainer;
+            var title = currentObj.Title;
+            var message = currentObj.Message;
+            connection = new HubConnection("http://localhost:8080/");
             //Make proxy to hub based on hub name on server
-            myHub = connection.CreateHubProxy("CustomHub");
-            //Start connection
+            myHub = connection.CreateHubProxy("MyHub");
+            //Start connection            
+            connection.Start().ContinueWith(task =>
+           {
+               if (task.IsFaulted)
+               {
 
-             connection.Start().ContinueWith(task =>
-            {
-                if (task.IsFaulted)
-                {
-                    Console.WriteLine("There was an error opening the connection:{0}",
-                                      task.Exception.GetBaseException());
-                }
-                else
-                {
-                    Console.WriteLine("Connected");
-                    myHub.Invoke<string>("Send", "HELLO World ").ContinueWith(task2 =>
+                   Debug.WriteLine("There was an error opening the connection:{0}",
+                                     task.Exception.GetBaseException());
+               }
+               else
+               {
+                   Debug.WriteLine("Connected");
+                   myHub.Invoke<string>("Send", $"{message}").ContinueWith(task2 =>
                     {
                         if (task2.IsFaulted)
                         {
-                            Console.WriteLine("There was an error calling send: {0}",
-                                              task.Exception.GetBaseException());
+                            Debug.WriteLine("There was an error calling send: {0}",
+                                              task2.Exception.GetBaseException());
                         }
                         else
                         {
-                            Console.WriteLine(task2.Result);
+                            Debug.WriteLine(task2.Result);
                         }
                     });
 
-                    myHub.On<string>("addMessage", param =>
-                    {
-                        Console.WriteLine(param);
-                    });
-                }
+                   myHub.On<string>("addMessage", param =>
+                   {
+                       ((WebWindow)this.Frame).RegisterStartupScript("Broadcast", $"alert('{param}')");
+                       Debug.WriteLine(param);
+                   });
+               }
 
-            }).Wait();
-            
+           }).Wait();
+
             //var currentObj = e.CurrentObject as ChatContainer;
             //var title = currentObj.Title;
             //var message = currentObj.Message;
@@ -73,7 +78,19 @@ namespace WebFormsSignalRChat.Module.Web.Controllers
         protected override void OnViewControlsCreated()
         {
             base.OnViewControlsCreated();
+            //try
+            //{
+            //    connection = new HubConnection("http://localhost:52838/");
+            //    //Make proxy to hub based on hub name on server
+            //    myHub = connection.CreateHubProxy("ChatHub");
+            //    //Start connection
+            //    connection.Start();
+            //}
+            //catch (Exception ex)
+            //{
 
+            //    throw new UserFriendlyException(ex.Message);
+            //}
             //XafCallbackManager.RegisterHandler("MyScript", this);
             ////WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("jquery", "http://localhost:2064/Scripts/jquery-1.6.4.min.js");
             //WebWindow.CurrentRequestWindow.RegisterClientScriptInclude("signalr", "http://localhost:2064/Scripts/jquery.signalR-2.4.3.min.js");
